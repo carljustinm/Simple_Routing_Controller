@@ -3,6 +3,12 @@
 <head>
     <title>@yield('title')</title>
     <style>
+        body {
+            background-color: #eee4f0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
         header {
             background-color: #f8f9fa;
             padding: 20px;
@@ -21,6 +27,9 @@
         }
         nav a:hover {
             text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
         }
     </style>
 </head>
