@@ -21,15 +21,30 @@
             text-align: center;
         }
         nav a {
+            display: inline-block;
             margin: 0 10px;
+            padding: 10px 20px;
             text-decoration: none;
             color: #007bff;
+            border: 2px solid #007bff;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        nav a.active {
+            background-color: #007bff;
+            color: #fff;
         }
         nav a:hover {
-            text-decoration: underline;
+            background-color: #007bff;
+            color: #fff;
         }
         .content {
             padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #fff;
         }
     </style>
 </head>
@@ -38,9 +53,9 @@
         Carl Justin Masedman
     </header>
     <nav>
-        <a href="{{ route('about.me') }}">About Me</a>
-        <a href="{{ route('skills') }}">Skills</a>
-        <a href="{{ route('hobbies') }}">Hobbies</a>
+        <a href="{{ route('about.me') }}" class="{{ request()->is('about-me') ? 'active' : '' }}">About Me</a>
+        <a href="{{ route('skills') }}" class="{{ request()->is('skills') ? 'active' : '' }}">Skills</a>
+        <a href="{{ route('hobbies') }}" class="{{ request()->is('hobbies') ? 'active' : '' }}">Hobbies</a>
     </nav>
     <div class="content">
         @yield('content')
